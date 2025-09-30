@@ -1,0 +1,45 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  border: 8px solid seagreen;
+  background: #fff;         /* optional: helps the border pop */
+}
+
+/* ===== Nav Bar (full width) ===== */
+nav {
+  background-color: saddlebrown;    /* bar background */
+}
+
+/* Row of links, centered, reasonable spacing */
+nav ul {
+  list-style: none;          /* remove bullets */
+  margin: 0;                 /* reset default margins */
+  padding: 1rem;             /* bar height */
+  display: flex;
+  justify-content: center;
+  gap: 2rem;                 /* balanced spacing (adjust as you like) */
+}
+
+/* Link appearance */
+nav a {
+  display: block;            /* makes padding clickable */
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;        /* subtle hover shape */
+}
+
+/* Hover/focus */
+nav a:hover,
+nav a:focus-visible {
+  background-color: #555;
+}
+
+/* Optional: show current page */
+nav a.active {
+  background: #0a66c2;
+}
