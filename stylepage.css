@@ -1,45 +1,235 @@
-html, body {
-  margin: 0;
-  padding: 0;
+/* ======================================================
+   LIS500 Website — Badger Theme Final CSS (Full + Centered)
+   Includes: gradient nav + footer, underline animation,
+   accessible colors, layout, responsive centering.
+====================================================== */
+
+/* ===== Base reset & variables ===== */
+:root {
+  --bg:#fafafa;
+  --paper:#ffffff;
+  --ink:#1b1b1b;
+  --muted:#555b61;
+
+  --brand:#c5050c;        /* Badger red */
+  --accent:#c5050c;       /* border red */
+  --nav:#282728;          /* dark neutral nav bar */
+
+  --ring: 3px solid rgba(197,5,12,.35);
+  --radius:14px;
+  --shadow: 0 4px 18px rgba(0,0,0,.06);
+  --maxw: 980px;
 }
 
+/* Reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Skip link ===== */
+.skip-link {
+  position: absolute; inset: auto auto auto 8px;
+  transform: translateY(-150%);
+  background: var(--brand);
+  color: #fff;
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+.skip-link:focus { transform: none; outline: var(--ring); }
+
+/* ===== Header ===== */
 header {
-  border: 8px solid seagreen;
-  background: #fff;         /* optional: helps the border pop */
+  border-bottom: 8px solid var(--accent);
+  background: #fff;
+  position: sticky; top: 0; z-index: 10;
+  width: 100%;
 }
 
-/* ===== Nav Bar (full width) ===== */
+/* ===== NAV BAR (Badger gradient + hover underline) ===== */
 nav {
-  background-color: saddlebrown;    /* bar background */
+  background: linear-gradient(90deg, #9b0000 0%, #c5050c 60%, #ff2626 100%);
 }
 
-/* Row of links, centered, reasonable spacing */
 nav ul {
-  list-style: none;          /* remove bullets */
-  margin: 0;                 /* reset default margins */
-  padding: 1rem;             /* bar height */
+  list-style: none;
+  margin: 0;
+  padding: .75rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;                 /* balanced spacing (adjust as you like) */
+  gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
-/* Link appearance */
 nav a {
-  display: block;            /* makes padding clickable */
-  padding: 0.5rem 0.75rem;
+  position: relative;
+  color: #fff;
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-  border-radius: 4px;        /* subtle hover shape */
+  font-weight: 700;
+  padding: 0.35rem 0.6rem;
 }
 
-/* Hover/focus */
 nav a:hover,
 nav a:focus-visible {
-  background-color: #555;
+  text-decoration: underline;
 }
 
-/* Optional: show current page */
 nav a.active {
-  background: #0a66c2;
+  text-decoration: underline;
+}
+
+/* ===== Main container ===== */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* ===== Sections ===== */
+.section {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* ===== Grid (for team + heroes) ===== */
+.grid {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Center all articles in grids */
+.grid article {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== Images ===== */
+figure {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Smaller images for profiles / heroes */
+.grid article img {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Text styles ===== */
+h1, h2, h3, figcaption, p {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--brand);
+}
+
+a:hover {
+  color: #ff2626;
+}
+
+/* ===== Footer ===== */
+footer {
+  border-top: 6px solid var(--accent);
+  background: var(--nav);
+  color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-inner ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: .5rem 0 0;
+}
+
+.footer-inner a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  figure img,
+  .grid article img {
+    max-width: 90%;
+  }
+}
+/* === Center + Clean Up Bulleted Lists === */
+ul {
+  list-style: none;         /* removes the bullet dots */
+  padding-left: 0;          /* removes the default left indent */
+  margin-left: 0;
+  text-align: center;       /* centers list items */
+}
+
+ul li {
+  margin: 0.35rem 0;        /* adds consistent spacing between list items */
+}
+
+ul.links a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--brand);
+  font-weight: 600;
+}
+
+ul.links a:hover {
+  color: #ff2626;
+  text-decoration: underline;
 }

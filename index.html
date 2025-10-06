@@ -1,25 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIS500 Website</title>
-    <link rel="stylesheet" href="stylepage.css">
+  <!-- index.html — Homepage -->
+  <!-- (1) Meta & CSS link -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LIS500 • Code, Power & Inclusion</title>
+  <link rel="stylesheet" href="stylepage.css" />
+  <meta name="description" content="UW–Madison LIS500 project site exploring code, power, intersectionality, and resources to reduce bias." />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="tech-heroes.html">Tech Heroes</a></li>
-            </ul>
-        </nav>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <h1>Our Project</h1>
+  <header>
+    <!-- (2) Global Nav -->
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="tech-heroes.html">Tech Heroes</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p>The goal of our project is to showcase how diversity and inclusivity can be stood up for using the power of technology and websites. We're all upperclassmen at UW-Madison excited about how we can use our technology skills to empower those in need of empowering, and if you want to know more about who we are, please check out the <a href="about-us.html">About Us</a> page.</p>
+  <main id="main" class="container">
+    <!-- (3) Hero / banner image
+    <section class="section">
+      <!-- Rationale: quick visual + stated mission (peers asked for this) -->
+      <figure>
+        <img src="images/inclusion.webp" alt="People connected with hands, symbolizing connection and power" />
+        <figcaption>Code, power, and inclusion: Our project focus.</figcaption>
+      </figure>
+      <h1>Our Mission</h1>
+      <p class="lead">
+        We’re exploring how <strong>code</strong> and <strong>power</strong> shape access, opportunity,
+        and bias online, then making that knowledge practical for first-year students through a simple,
+        accessible site.
+      </p>
+      <div class="callout">
+        <!-- (4) Intersectionality baked-in to content -->
+        <strong>Intersectionality matters:</strong> People experience technology differently across race,
+        gender, class, ability, and citizenship. Our site highlights those overlaps with clear resources
+        and approachable examples.
+      </div>
+    </section>
+
+    <!-- (5) Quick sections to reduce "all text" feel -->
+    <section class="section grid" aria-label="Quick links">
+      <article>
+        <h2>Start with Bias & IBT</h2>
+        <p>Short explanations + links such as the Implicit Bias Test that you could utilize.</p>
+        <p><a href="resources.html">Go to Resources →</a></p>
+      </article>
+      <article>
+        <h2>Meet the Team</h2>
+        <p>Who we are, why we care, and how this connects to LIS500 readings.</p>
+        <p><a href="about-us.html">About Us →</a></p>
+      </article>
+      <article>
+        <h2>Tech Heroes</h2>
+        <p>People advancing equity in tech beyond the usual names; with links to learn more.</p>
+        <p><a href="tech-heroes.html">See Heroes →</a></p>
+      </article>
+    </section>
+  </main>
+
+  <!-- (6) Footer nav (peers asked for footer) -->
+  <footer>
+    <div class="footer-inner">
+      <small>UW–Madison • LIS500 Project #2</small>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="tech-heroes.html">Tech Heroes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>

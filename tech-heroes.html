@@ -1,32 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIS500 Website</title>
-    <link rel="stylesheet" href="stylepage.css">
+  <!-- tech-heroes.html — Profiles -->
+  <!-- HTML comments included per rubric -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Heroes • LIS500</title>
+  <link rel="stylesheet" href="stylepage.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="tech-heroes.html">Tech Heroes</a></li>
-            </ul>
-        </nav>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <h1>Tech Heroes</h1>
-        <h2>Jason Thronson's Tech Hero: Empress</h2>
-        <p>Empress (or EMPRESS) is a video-game hacker whose primary goal is to remove anti-piracy measures in certain triple a video game titles, specifically video games that use the "Denuvo" software as their anti-piracy tool. This is because Denuvo is known to be extremely invasive to the operating system, in that it even goes beyond the operating system which is considered extremely unethical. Ever since 2014, she would just charge $500 per game and then be able to crack it within a short amount of time, making her stand out immensely among her peers. In particular, she was able to crack Hogwarts Legacy in just 12 days, despite anti-piracy tools like Denuvo being extremely complicated as well as having obfuscated code.</p>
+  <header>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a class="active" href="tech-heroes.html">Tech Heroes</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <h2>Dhanvi Kanade's Tech Hero: Issra Omper</h2>
-        <p>Issra Omer is Product Director at Spotify. She has previously worked at Meta/Facebook and she studied at Stanford. Her accomplishments include creating Spotify’s lyric feature and working on the freemium experience as well. She has also spoken out about her career as a Black woman in tech. As a minority and a woman in the tech field, I really felt like we were similar in that way. I also really enjoy listening to Spotify music and the lyrics feature of it is something I really liked, so knowing she was the one who worked on it was really cool. I think she matters as a tech hero because while her focus is on product innovation, I really like her speaking out about her challenges as a woman of color. Also seeing her in a senior role as a woman of color is very inspiring as this is an industry with not as much representation. She also supports community spaces such as Black Product Managers Europe which just again shows a lot about her character.</p>
-    
-        <h2>Orion King's Tech Hero: Yeshimabeit "Yeshi" Miller</h2>
-        <p>Yeshimabeit “Yeshi” Milner is a technologist, activist, and community organizer who has become one of the most powerful voices connecting racial justice to data and technology. She is the co-founder and Executive Director of Data for Black Lives (D4BL), a nonprofit organization that seeks to use data science to advance the movement for Black lives and to challenge the ways data has historically been weaponized against marginalized communities. Milner’s path into the tech space was not a traditional Silicon Valley one. She grew up in Miami, where she experienced firsthand how biased institutions used data to reinforce inequality. From school discipline statistics disproportionately targeting Black students to predictive policing models that criminalize Black neighborhoods. These early experiences shaped her vision which was that data is not neutral, and it must be reclaimed as a tool for liberation rather than oppression. In founding Data for Black Lives, Milner positioned herself at the intersection of technology and activism. The organization challenges scientists, activists, policymakers, and community members to rethink how data is collected, shared, and governed. One of its major contributions is highlighting how supposedly objective algorithms, from health risk scoring systems to credit ratings, often reproduce structural racism. Under Milner’s leadership, D4BL pushes for what she calls “data justice” which is the idea that communities most affected by systemic bias should have power over how data about them is used. Milner is not only reshaping conversations within activist circles but also challenging norms inside the broader tech ecosystem. She argues that equity in tech cannot be limited to surface-level “diversity and inclusion” programs that bring more people of color into Silicon Valley companies without changing how those companies operate. Instead, she reframes the debate toward structural change. She’s asking how data and algorithms shape power, whose interests they serve, and how marginalized communities can gain sovereignty over these tools. Her work has been recognized nationally. She has spoken at institutions ranging from the Obama White House to MIT, and her leadership has been profiled in outlets such as The Guardian and Fast Company. Yet, despite the recognition, she remains grounded in grassroots organizing, emphasizing accountability to the communities most harmed by data misuse. This blend of technical critique, political imagination, and community grounding makes her stand out as a “tech hero.” Milner embodies the idea that technology is never neutral. It always reflects human values, biases, and power structures. By insisting that data be used to fight injustice rather than deepen it, she is challenging one of the deepest myths of the tech industry: that algorithms are objective and fair. For students and professionals seeking to connect technology with equity, her career offers both a roadmap and a challenge to think critically about the social impact of the tools we build.
-        </p>
+  <main id="main" class="container">
+    <section class="section">
+      <h1 style="text-align:center">Tech Heroes</h1>
+      <p class="lead" style="text-align:center">Equity-minded figures connecting code to power, inclusion, and real users.</p>
+    </section>
+
+    <section class="section grid" aria-label="Hero profiles">
+      <!-- Jason / Empress -->
+      <article>
+        
+        <h2>Jason’s Tech Hero: Empress</h2>
+        <figure>
+          <img src="images/empress.webp" alt="Illustrative image related to DRM and game protection" />
+          <figcaption>Empress — DRM & user rights</figcaption>
+        </figure>
+
+        <p>Known for removing invasive anti-tamper tech like Denuvo—raising questions about user rights, privacy, and performance.</p>
+        <ul class="links">
+          <!-- Relevant background on Denuvo/DRM -->
+          <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Denuvo">Background: What is Denuvo?</a></li>
+          <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Digital_rights_management">What is DRM?</a></li>
+        </ul>
+        <!-- Full original write-up-->
+        <details>
+          <summary>Read Jason’s full write-up</summary>
+          <p>Empress (or EMPRESS) is a video-game hacker whose primary goal is to remove anti-piracy measures in certain triple a video game titles, specifically video games that use the "Denuvo" software as their anti-piracy tool. This is because Denuvo is known to be extremely invasive to the operating system, in that it even goes beyond the operating system which is considered extremely unethical. Ever since 2014, she would just charge $500 per game and then be able to crack it within a short amount of time, making her stand out immensely among her peers. In particular, she was able to crack Hogwarts Legacy in just 12 days, despite anti-piracy tools like Denuvo being extremely complicated as well as having obfuscated code.</p>
+        </details>
+      </article>
+
+      <!-- Dhanvi / Issra Omer -->
+      <article>
+        
+
+        <h2>Dhanvi’s Tech Hero: Issra Omer</h2>
+        <figure>
+          <img src="images/issra.jpeg" alt="Picture of Issra" />
+          <figcaption>Issra Omer — Spotify product leadership</figcaption>
+        </figure>
+        <p>Spotify Product Director (ex-Meta) who helped ship Lyrics and speaks about navigating tech as a Black woman in leadership.</p>
+        <ul class="links">
+          <!-- Relevant official source about Spotify & feature news -->
+          <li><a target="_blank" rel="noopener" href="https://www.revenuebrew.com/stories/2025/09/24/how-spotify-became-profitable-and-what-s-next">Spotify Article that Issra Omer was cited on</a></li>
+          <!-- General profile link -->
+          <li><a target="_blank" rel="noopener" href="https://uk.linkedin.com/in/issraomer">LinkedIn (career background)</a></li>
+        </ul>
+        <details>
+          <summary>Read Dhanvi’s full write-up</summary>
+          <p>Issra Omer is Product Director at Spotify. She has previously worked at Meta/Facebook and she studied at Stanford. Her accomplishments include creating Spotify’s lyric feature and working on the freemium experience as well. She has also spoken out about her career as a Black woman in tech. As a minority and a woman in the tech field, I really felt like we were similar in that way. I also really enjoy listening to Spotify music and the lyrics feature of it is something I really liked, so knowing she was the one who worked on it was really cool. I think she matters as a tech hero because while her focus is on product innovation, I really like her speaking out about her challenges as a woman of color. Also seeing her in a senior role as a woman of color is very inspiring as this is an industry with not as much representation. She also supports community spaces such as Black Product Managers Europe which just again shows a lot about her character.</p>
+        </details>
+      </article>
+
+      <!-- Orion / Yeshi Milner -->
+      <article>
+        
+
+        <h2>Orion’s Tech Hero: Yeshimabeit “Yeshi” Milner</h2>
+        <figure>
+          <img src="images/Milner.webp" alt="Milner's picture" />
+          <figcaption>Yeshimabeit “Yeshi” Milner — Data for Black Lives</figcaption>
+        </figure>
+        <p>Co-founder of Data for Black Lives; pushes “data justice” and challenges biased algorithms embedded in institutions.</p>
+        <ul class="links">
+          <!-- Official organization + general coverage -->
+          <li><a target="_blank" rel="noopener" href="https://d4bl.org/people/9-yeshimabeit-milner">Data for Black Lives write-up (official)</a></li>
+          <li><a target="_blank" rel="noopener" href="https://www.linkedin.com/in/yeshimabeit-milner-a7788944/">Yeshi's LinkedIn</a></li>
+        </ul>
+        <details>
+          <summary>Read Orion’s full write-up</summary>
+          <p>Yeshimabeit “Yeshi” Milner is a technologist, activist, and co-founder of Data for Black Lives (D4BL). This is an organization using data science to advance racial justice and expose how algorithms can reinforce inequality.
+            Growing up in Miami, she saw firsthand how biased data was used to criminalize Black communities, inspiring her mission to reclaim data as a tool for liberation.
+            Under her leadership, D4BL promotes “data justice,” empowering marginalized groups to control how data about them is used.
+            Milner challenges the idea that technology is neutral, arguing that true equity in tech requires structural change, not just diversity programs.
+            Her work bridges activism and technology, showing how data can fight injustice instead of deepening it.</p>
+        </details>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Why these heroes?</h2>
+      <p>They each connect code decisions to power and equity: privacy vs. DRM (Empress), inclusive product leadership (Omer), and community data governance (Milner).</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <small>UW–Madison • LIS500 Project #2</small>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a class="active" href="tech-heroes.html">Tech Heroes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
