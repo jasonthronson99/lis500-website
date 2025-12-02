@@ -40,7 +40,7 @@ Our approach was strongly influenced by lessons from:
 - Representation matters  
 - Fair AI must be intentional  
 
-We avoided any human subject–based classifications to prevent demographic or facial-recognition–related harms.
+We avoided any human subject–based classifications to prevent demographic or facial-recognition related harms.
 
 ### **Tech, Heal Thyself — Ellen Pao**
 - Power structures shape who builds technology  
