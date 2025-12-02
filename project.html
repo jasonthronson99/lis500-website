@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- project.html — Machine Learning Project 3 -->
+  <!-- HTML comments included per rubric -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech Heroes • LIS500</title>
+  <link rel="stylesheet" href="stylepage.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a class="active" href="tech-heroes.html">Tech Heroes</a></li>
+        <li><a href="project.html">Machine Learning</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <section class="section">
+    <!-- HTML Code For Project -->
+      <h1>Image Classifier (Teachable Machine)</h1>
+      <p class="lead">This page uses our Teachable Machine image model to classify objects in real time using your webcam.</p>
+      <p>All you have to do is just click the button below to start your camera, and then hold one of the trained objects in front of the webcam to see the live prediction.</p>
+
+      <button type="button" onclick="init()">Camera</button>
+
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+    </section>
+    
+    <!-- Code For Video Demo -->
+
+    <section class="section">
+      <h2>Video Demonstration</h2>
+      <video width="640" controls>
+        <source src="videos/my-tm-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>This short video demonstrates our Teachable Machine model classifying objects in real time.</p>
+    </section>
+    
+  </main>
+
+  <footer>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#">UW–Madison</a>
+      <a href="index.html">LIS500 Project #3</a>
+      <a href="https://github.com/jasonthronson/lis500-project3" target="_blank">GitHub</a>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.7.4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.4/dist/teachablemachine-image.min.js"></script>
+
+  <script>
+  <!-- Main Script Below -->
+
+  const URL = "Project/";
+
+  let model, webcam, labelContainer;
+
+  async function init() {
+    const modelURL = URL + "model.json";
+    const metadataURL = URL + "metadata.json";
+
+    model = await tmImage.load(modelURL, metadataURL);
+    maxPredictions = model.getTotalCases();
+
+    const flip = true;
+    webcam = new tmImage.Webcam(300, 300, flip);
+    await webcam.setup();
+    await webcam.play();
+    window.requestAnimationFrame(loop);
+
+    document.getElementById("webcam-container").innerHTML = "";
+    document.getElementById("webcam-container").appendChild(webcam.canvas);
+
+    labelContainer = document.getElementById("label-container");
+    labelContainer.innerHTML = "";
+    for (let i = 0; i < maxPredictions; i++) {
+      const div = document.createElement("div");
+      labelContainer.appendChild(div);
+    }
+  }
+
+  async function loop() {
+    webcam.update();
+    await predict();
+    window.requestAnimationFrame(loop);
+  }
+
+  async function predict() {
+    const prediction = await model.predict(webcam.canvas);
+    for (let i = 0; i < maxPredictions; i++) {
+      const className = prediction[i].className;
+      const probability = (prediction[i].probability * 100).toFixed(1);
+      labelContainer.childNodes[i].innerHTML = `${className}: ${probability}%`;
+    }
+  }
+
+  </script>
+
+</body>
+</html>

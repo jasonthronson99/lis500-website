@@ -22,21 +22,25 @@
 }
 
 /* Reset */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: var(--bg);
   color: var(--ink);
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* ===== Skip link ===== */
 .skip-link {
-  position: absolute; inset: auto auto auto 8px;
+  position: absolute;
+  inset: auto auto auto 8px;
   transform: translateY(-150%);
   background: var(--brand);
   color: #fff;
@@ -44,32 +48,40 @@ body {
   border-radius: 8px;
   z-index: 1000;
 }
-.skip-link:focus { transform: none; outline: var(--ring); }
+
+.skip-link:focus {
+  transform: none;
+  outline: var(--ring);
+}
 
 /* ===== Header ===== */
 header {
   border-bottom: 8px solid var(--accent);
   background: #fff;
-  position: sticky; top: 0; z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   width: 100%;
 }
 
-/* ===== NAV BAR (Badger gradient + hover underline) ===== */
-nav {
+/* ===== NAV + FOOTER (shared gradient + links) ===== */
+header nav {
   background: linear-gradient(90deg, #9b0000 0%, #c5050c 60%, #ff2626 100%);
+  color: #fff;
 }
 
-nav ul {
+header nav ul {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: .75rem;
   display: flex;
   justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
+  max-width: var(--maxw);
 }
 
-nav a {
+header nav a {
   position: relative;
   color: #fff;
   text-decoration: none;
@@ -77,9 +89,9 @@ nav a {
   padding: 0.35rem 0.6rem;
 }
 
-nav a:hover,
-nav a:focus-visible {
+header nav a:hover, header nav a:focus-visible, header nav a:active {
   text-decoration: underline;
+  color: #fff;
 }
 
 nav a.active {
@@ -164,40 +176,33 @@ a:hover {
   color: #ff2626;
 }
 
-/* ===== Footer ===== */
+/* ===== Footer Inner Layout ===== */
 footer {
-  border-top: 6px solid var(--accent);
-  background: var(--nav);
-  color: #fff;
-  width: 100%;
+  background: linear-gradient(90deg, #9b0000 0%, #c5050c 60%, #ff2626 100%);
+  padding: 0.75rem 1.25rem;
   margin-top: 2rem;
 }
 
-.footer-inner {
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 1rem;
+/* The <nav class="footer-nav"> inside footer */
+.footer-nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.75rem;
 }
 
-.footer-inner ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: .5rem 0 0;
-}
-
-.footer-inner a {
+/* The three links: LIS 500, Final Website, GitHub */
+.footer-nav a {
   color: #fff;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
+  padding: 0.35rem 0.6rem;
 }
 
-.footer-inner a:hover {
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
   text-decoration: underline;
 }
 
@@ -206,11 +211,16 @@ footer {
   .grid {
     grid-template-columns: 1fr;
   }
-  figure img,
-  .grid article img {
+  figure img, .grid article img {
     max-width: 90%;
   }
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
 }
+
 /* === Center + Clean Up Bulleted Lists === */
 ul {
   list-style: none;         /* removes the bullet dots */
